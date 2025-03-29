@@ -13,7 +13,7 @@ use App\Http\Controllers\WeeklyScheduleController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
-})->middleware('auth:sanctum');
+})->middleware('auth:sanctum'); 
 
 //enrégistrement d'un prof
 Route::post('/register/professor', [AuthController::class, 'registerUser'])->defaults('type', 'professor');
@@ -59,7 +59,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     //programmer un cours
     Route::post('/courses/{courseId}/schedule', [AdministratorController::class, 'scheduleCourse']);
-    
+
     //pour les professeurs
     //la listes des profs
     Route::get('/professors', [ProfessorController::class, 'index']);
